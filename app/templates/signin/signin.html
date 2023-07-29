@@ -1,0 +1,35 @@
+{% load static %}
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="{% static 'signin.css' %}">
+    <title>Sign in</title>
+</head>
+<script>
+    alert("Caso queira apenas testar, você pode usar o login e senha padrão \n User: user \n Pass: pass123")
+</script>
+<body>
+    <form action="{% url 'signin' %}" method="POST"> {% csrf_token %}
+        <main class="container">
+            <h1>SIGN IN</h1>
+            {% if messages %}
+            {% for message in messages %}
+            <p style="color: #b33333;">
+                {{message}}
+            </p>
+            {% endfor %}
+            {% endif %}
+            <div class="boxInput">
+                <input class="inputData" type="text" name="user" id="" placeholder="Usuário" required/>
+                <input class="inputData" type="password" name="passwd" id="" placeholder="Senha" required/>
+                <input class="button" type="submit" value="Entrar"/>
+            </div>
+            <div class="boxCad">
+                <p>Ainda não possui uma conta?<a href="{% url 'signup' %}"> Cadastre-se</a></p>
+            </div>
+        </main> 
+    </form>
+    
+</body>
+</html>

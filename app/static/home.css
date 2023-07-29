@@ -1,0 +1,233 @@
+body{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+
+    width: 100vw;
+    height: 100vh;
+    font-family: sans-serif;
+    overflow: hidden;
+    
+    background:linear-gradient(to right, #13afb4, #082f3b);
+}
+h1{
+    color:#249094;
+}
+a{
+    text-decoration: none;
+    color: #249094;
+
+}
+.container{
+    width: 35vw;
+    height: 90vh;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    border-radius: 12px;
+}
+.header{
+    background-color: #FFF;
+    width: 35vw;
+    height: 20vh;
+    border-radius: 12px;
+    margin-bottom: 25px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    position: relative;
+}
+.boxTitle{
+    display: flex;
+    flex-direction: column;
+    justify-content: space-around;
+    align-items: center;
+    width: 35vw;
+
+}
+.logout{
+    align-self: flex-end;
+    margin-top: 1vw;
+    margin-right: 0.5vw;
+}
+.inputBox{
+    width: 35vw;
+    display: flex;
+    align-items: flex-end;
+    justify-content: space-around;
+}
+.inputTask{
+    width: 27vw;
+    height: 4vh;
+    border: none;
+    outline: none;
+    border-bottom: solid 1px #000;
+    color: #249094;
+}
+.inputTask::placeholder{
+    color:#4d4d4d;
+}
+.buttonTask{
+    outline: none;
+    border: none;
+    background-color: #249094;
+    color: #FFF;
+    width: 130px;
+    height: 30px;
+    border-radius: 5px;
+}
+.buttonTask:hover{
+    cursor: pointer;
+    background-color: #4d4d4d;
+}
+.task{
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    justify-content: flex-start;
+    width: 35vw;
+    height: 90vh;
+}
+.divTask{
+    width: 35vw;
+    height: 5vh;
+    border-radius: 8px;
+    background-color: #FFF;
+    margin: 10px 0 10px 0;
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+}
+.nameTask{
+    font-size: 16px;
+    font-family:Arial, Helvetica, sans-serif;
+    margin-left: 10px;
+    color: #082f3b;
+}
+.name{
+    color: #249094;
+}
+.boxInfo{
+    width: 33vw;
+    height: auto;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+.complet{
+    font-size: 16px;
+    font-family:Arial, Helvetica, sans-serif;
+    color: #0b8800;
+}
+.inProgress{
+    font-size: 16px;
+    font-family:Arial, Helvetica, sans-serif;
+    color: #c00000;
+}
+.statusBox{
+    width: 8vw;
+}
+.taskBox{
+    width: 15vw;
+}
+.statusBox a{
+    width: 4vw;
+}
+.btn{
+    width: 80px;
+    height: 30px;
+    border: none;
+    outline: none;
+    color: #FFF;
+    border-radius: 5px; 
+    transition: 0.10s;  
+}
+.btn:hover{
+    cursor: pointer;
+    width: 85px;
+    height: 35px;
+    transition: 0.10s;
+}
+#delete{
+    background-color: #ce0000;
+}
+#complet{
+    background-color: #1ba000;
+}
+
+@media screen and (max-width: 1000px) {
+    body{
+        overflow: hidden;
+    }
+    .inputTask{
+        width: 75vw;
+    }
+    .header{
+        width: 90vw;
+        background-color: #FFF;
+        border-radius: 12px;
+        margin-bottom: 25px;
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        position: relative;
+    }
+    .boxinfo{
+        width: 85vw;
+    }
+    .inputBox{
+        width: 85vw;
+    }
+    .task{
+        width: 90vw;
+        height: auto;
+    }
+    .divTask{
+        width: 90vw;
+    }
+    .boxInfo{
+        width: 85vw;
+        height: auto;
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+    }
+    .complet{
+        font-size: 16px;
+        font-family:Arial, Helvetica, sans-serif;
+        color: #0b8800;
+    }
+    .inProgress{
+        font-size: 16px;
+        font-family:Arial, Helvetica, sans-serif;
+        color: #c00000;
+    }
+    .statusBox{
+        width: 7vw;
+    }
+    .taskBox{
+        width: 15vw;
+    }
+    .statusBox a{
+        width: 4vw;
+    }
+    .btn{
+        width: 13vw;
+        height: 6vw;
+        border: none;
+        outline: none;
+        color: #FFF;
+        border-radius: 5px; 
+        transition: 0.10s;  
+    }
+    .btn:hover{
+        cursor: pointer;
+        width: 14vw;
+        height: 7vw;
+        transition: 0.10s;
+    }
+
+    }

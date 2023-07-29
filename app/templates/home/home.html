@@ -1,0 +1,69 @@
+{% load static %}
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="{% static 'home.css' %}">
+    <title>To-do List</title>
+</head>
+<body>
+    <main class="container">
+        <div class="header">
+            <div class="boxTitle">
+                <div class="boxInfo">
+                    {% for i in name %}
+                    <div>
+                        <p class="name">Olá, {{i.first_name}}</p>   
+                    </div>
+                    {% endfor %}  
+                    <a href={% url 'log_out' %}>Sair</a>
+                </div>
+                <div>
+                    <h1>To-do List</h1>
+                </div>
+            </div>
+            <form method="POST" action="{% url 'home' %}" class="inputBox"> {% csrf_token %}
+                <input type="text" placeholder="Ex: Estudar programação" name="task" class="inputTask"/>
+                <input type="submit" class="buttonTask" value="Adicionar"/>
+            </form>
+        </div>
+
+        <div class="task">
+            {% for i in tasks %}
+                <div class="divTask">
+                    <div class="taskBox"><p class="nameTask">{{i.task}}</p></div>
+                    
+                    {% if i.status == True %}
+                    <div class="statusBox">
+                    <p class="complet">Completa</p>
+                    </div>
+
+                    <div class="statusBox">
+                        <a href={% url 'delet' i.task %}>
+                            <button class="btn" id="delete">Apagar</button>
+                        </a>
+                    </div> 
+
+                    
+                    {% else %}
+                        <div class="statusBox">
+                            <p class="inProgress">Pendente</p>
+                        </div>
+
+                        <div class="statusBox">
+                            <a href={% url 'delet' i.task %}>
+                                <button class="btn" id="delete">Apagar</button>
+                            </a>
+                        </div> 
+                        <div class="statusBox">
+                            <a href={% url 'complet' i.task %}>
+                                <button class="btn" id="complet">Completar</button>
+                            </a>
+                        </div> 
+                    {% endif %}
+                </div>
+            {% endfor %}       
+        </div>
+    </main>
+</body>
+</html>

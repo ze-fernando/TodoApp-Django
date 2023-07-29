@@ -1,0 +1,39 @@
+{% load static %}
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="{% static 'signup.css' %}">
+    <title>Sign in</title>
+</head>
+<body>
+    <form action="{% url 'signup' %}" method="POST"> {% csrf_token %}
+        <main class="container">
+            <h1>SIGN UP</h1>
+            {% if messages %}
+                {% for message in messages %}
+                    {% if message == error %}
+                        <p style="color: #b33333;">
+                            {{message}}
+                        </p>
+
+                    {% else %}
+                        <p style="color: #1ba000;">
+                            {{message}}
+                        </p>
+                    {% endif %}
+                {% endfor %}
+            {% endif %}
+            <div class="boxInput">
+                <input class="inputData" type="text" name="name" id="" placeholder="Nome" required/>
+                <input class="inputData" type="text" name="user" id="" placeholder="Usuário" required/>
+                <input class="inputData" type="password" name="passwd" id="" placeholder="Senha" required/>
+                <input class="button" type="submit" value="Cadastrar"/>
+            </div>
+            <div class="boxCad">
+                <p>Já possui uma conta?<a href="{% url 'signin' %}"> Entre</a></p>
+            </div>
+        </main>
+    </form>
+</body>
+</html>
