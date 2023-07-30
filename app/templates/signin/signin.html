@@ -7,7 +7,10 @@
     <title>Sign in</title>
 </head>
 <script>
-    alert("Caso queira apenas testar, você pode usar o login e senha padrão \n User: user \n Pass: pass123")
+    if (!sessionStorage.getItem('alertShown')) {
+        alert("Caso queira apenas testar, você pode usar o login e senha padrão \n User: user \n Pass: pass123");
+        sessionStorage.setItem('alertShown', 'true');
+    }
 </script>
 <body>
     <form action="{% url 'signin' %}" method="POST"> {% csrf_token %}

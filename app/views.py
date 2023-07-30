@@ -7,7 +7,6 @@ from django.contrib.auth.decorators import login_required
 from .models import Task
 from django.views.decorators.csrf import csrf_exempt
 
-
 @csrf_exempt
 def signin(request):
     if request.method == "GET":
