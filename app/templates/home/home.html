@@ -18,12 +18,17 @@
                     {% endfor %}  
                     <a href={% url 'log_out' %}>Sair</a>
                 </div>
+                {% if messages %}
+                    {% for message in messages %}
+                        <p style="color: #b33333; position: absolute; margin-bottom: 100px;">{{message}}</p>
+                    {% endfor %}
+                {% endif %}
                 <div>
                     <h1>To-do List</h1>
                 </div>
             </div>
             <form method="POST" action="{% url 'home' %}" class="inputBox"> {% csrf_token %}
-                <input type="text" placeholder="Ex: Estudar programação" name="task" class="inputTask"/>
+                <input type="text" placeholder="Ex: Estudar programação" name="task" class="inputTask" required/>
                 <input type="submit" class="buttonTask" value="Adicionar"/>
             </form>
         </div>
@@ -32,7 +37,7 @@
             {% for i in tasks %}
                 <div class="divTask">
                     <div class="taskBox"><p class="nameTask">{{i.task}}</p></div>
-                    
+
                     {% if i.status == True %}
                     <div class="statusBox">
                     <p class="complet">Completa</p>

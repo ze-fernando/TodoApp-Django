@@ -60,11 +60,13 @@ def home(request):
         if request.method == 'POST':
             task = request.POST.get('task')
             newTask = Task(user=request.user, task=task)
-            newTask.save()
-
+            hasTask = Task.objects.filter(task=task).first()
+            if hasTask:
+                messages.error(request, "As taferas devem ter nomes diferentes")
+            else:
+                newTask.save()
         allTasks = Task.objects.filter(user=request.user)
         name = User.objects.filter(username=request.user)
-
         context = {
             'tasks': allTasks,
             'name': name
@@ -73,7 +75,7 @@ def home(request):
     else:
         return render(request, 'signin/signin.html')    
 
-@csrf_exempt
+
 @login_required
 def log_out(request):
     logout(request)
@@ -88,6 +90,7 @@ def deletTask(request, name):
 @csrf_exempt
 def completTask(request, name):
     getTask = Task.objects.filter(user=request.user, task=name)
-    getTask.status = True
-    getTask.save()
+    for task in getTask:
+        task.status = True
+        task.save()
     return redirect('home')

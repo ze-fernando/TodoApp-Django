@@ -12,7 +12,7 @@
             <h1>SIGN UP</h1>
             {% if messages %}
                 {% for message in messages %}
-                    {% if message == error %}
+                    {% if message is error %}
                         <p style="color: #b33333;">
                             {{message}}
                         </p>
