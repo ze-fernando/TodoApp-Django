@@ -6,17 +6,17 @@ App where you can add your tasks, with authentication no one can see your tasks
 
 ## Endpoints
 
-**`https://todoapp-django-production-7269.up.railway.app/signin/`**
+**`signin/`**
 
-**`https://todoapp-django-production-7269.up.railway.app/signup/`**
+**`signup/`**
 
-**`https://todoapp-django-production-7269.up.railway.app/home/`**
+**`home/`**
 
-**`https://todoapp-django-production-7269.up.railway.app/log_out/`**
+**`log_out/`**
 
-**`https://todoapp-django-production-7269.up.railway.app/complet/{name}`**
+**`complet/{name}`**
 
-**`https://todoapp-django-production-7269.up.railway.app/delet/{name}`**
+**`delet/{name}`**
 
 
 
