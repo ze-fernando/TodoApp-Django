@@ -1,4 +1,4 @@
-# Fullstack To-do app
+# To-do app
 
 ## About
 App where you can add your tasks, with authentication no one can see your tasks
