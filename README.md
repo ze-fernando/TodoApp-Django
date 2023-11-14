@@ -25,7 +25,3 @@ App where you can add your tasks, with authentication no one can see your tasks
 **User: user**
 
 **Pass: pass123**
-
-
-## Link 
- * <https://todoapp-django-production-7269.up.railway.app/>
